@@ -1,0 +1,21 @@
+name: Trigger Scanner Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      scan_url:
+        description: 'URL to scan with the scanner repository'
+        required: true
+
+jobs:
+  trigger-scanner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger scanner workflow
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          repository: "https://github.com/TanTrumMaster/ApiScanner"  # Replace with the name of your scanner repository
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: trigger-scan
+          client-payload: '{"https://github.com/Siddhant02082002/BAckend-Testing": "${{ github.event.inputs.scan_url }}"}'
