@@ -15,7 +15,7 @@ jobs:
       - name: Trigger scanner workflow
         uses: peter-evans/repository-dispatch@v2
         with:
-          repository: "TanTrumMaster/ApiScanner"  # Correct format for the repository
-          token: ${{ secrets.GITHUB_TOKEN }}  # Default GitHub token should be sufficient
+          repository: "TanTrumMaster/ApiScanner"  # Ensure this is the correct repository
+          token: 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  # Dummy token used directly
           event-type: trigger-scan
           client-payload: '{"scan_url": "${{ github.event.inputs.scan_url }}"}'
