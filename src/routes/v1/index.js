@@ -10,5 +10,5 @@ router.use('/auth', authRoute);
 router.use('/users', userRoute);
 router.use('/roles', roleRoute);
 router.use('/images', imageRoute);
-
+router.use('/scanFlow',zapReport);
 export default router;
