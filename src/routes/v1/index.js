@@ -3,7 +3,7 @@ import authRoute from './authRoute';
 import userRoute from './userRoute';
 import roleRoute from './roleRoute';
 import imageRoute from './imageRoute';
-
+import zapReport from './zapReport';
 const router = Router();
 
 router.use('/auth', authRoute);
