@@ -7,7 +7,7 @@ import roleController from '~/controllers/roleController';
 
 const router = Router();
 
-router.get('/', authenticate('role:create'), validate(roleValidation.createRole), catchAsync(roleController.createRole));
+router.get('/');
 
 
 export default router;
