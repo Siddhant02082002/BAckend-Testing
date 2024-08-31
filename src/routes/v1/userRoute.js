@@ -10,7 +10,7 @@ const router = Router();
 router.get('/', authenticate('user:read'), validate(userValidation.getUsers), catchAsync(userController.getUsers));
 router.post('/', authenticate('user:create'), validate(userValidation.createUser), catchAsync(userController.createUser));
 router.get('/:userId', authenticate('user:read'), validate(userValidation.getUser), catchAsync(userController.getUser));
-
+//
 router.delete(
 	'/:userId',
 	authenticate('user:delete'),
